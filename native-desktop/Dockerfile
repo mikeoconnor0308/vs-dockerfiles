@@ -30,5 +30,5 @@ RUN C:\TEMP\Install.cmd C:\TEMP\vs_buildtools.exe --quiet --wait --norestart --n
     --installPath C:\BuildTools
 
 # Use developer command prompt and start PowerShell if no other command specified.
-ENTRYPOINT C:\BuildTools\Common7\Tools\VsDevCmd.bat &&
-CMD ["powershell.exe", "-NoLogo", "-ExecutionPolicy", "Bypass"]
+ADD VsDevCmdPowerShell.bat C:\BuildTools\
+ENTRYPOINT C:\BuildTools\VsDevCmdPowerShell.bat
